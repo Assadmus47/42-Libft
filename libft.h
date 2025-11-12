@@ -1,7 +1,19 @@
-#ifndef LIBFT_H
-#define LIBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 19:12:48 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/12 19:13:06 by mkacemi          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stddef.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stddef.h>
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
