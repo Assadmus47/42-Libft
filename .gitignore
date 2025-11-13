@@ -3,3 +3,4 @@
 *.out
 *.json
 node_modules
+test.c

@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:12:48 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/12 20:02:18 by mkacemi          ###   ########.fr       */
-=======
-/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:12:48 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/12 19:13:06 by mkacemi          ###   ########lyon.fr   */
->>>>>>> remotes/origin/redo-last-changes
+/*   Created: 2025/11/13 22:36:50 by marvin            #+#    #+#             */
+/*   Updated: 2025/11/13 22:36:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +24,9 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t		ft_strlen(char *str);
 void		*ft_memset(void *pointer, int value, size_t count );
-void		bzero(void *s, size_t n);
+void		ft_bzero(void *s, size_t n);
 void 		*ft_memmove(void * destination, const void * source, size_t size );
-void		*memcpy( void * destination, const void * source, size_t size );
+void		*ft_memcpy(void * destination, const void * source, size_t size );
+size_t		ft_strlcpy(char *  dest , const char *  src , size_t  size);
 
 #endif

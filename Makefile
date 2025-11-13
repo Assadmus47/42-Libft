@@ -24,6 +24,6 @@ re: fclean all
 
 git:
 	git add .
-	git commit -m "making Makfile"
+	git commit -m "auto commit"
 
 .PHONY : all cleam fclean re
