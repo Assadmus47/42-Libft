@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 16:47:49 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/14 16:47:53 by mkacemi          ###   ########.fr       */
+/*   Created: 2025/11/14 18:10:52 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/14 19:07:00 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strncmp(const char *first, const char *second, size_t length)
 {
 	size_t	i;
-	size_t	src_taille;
 
-	src_taille = 0;
-	while (src[src_taille])
-		src_taille++;
 	i = 0;
-	if (size == 0)
-		return (src_taille);
-	while (i < (size - 1) && src[i])
+	if (length == 0)
+		return (0);
+	while ((first[i] || second[i]) && i < length)
 	{
-		dest[i] = src[i];
+		if (first[i] != second[i])
+			return ((unsigned char)first[i] - (unsigned char)second[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (src_taille);
+	return (0);
 }

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 16:47:49 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/14 16:47:53 by mkacemi          ###   ########.fr       */
+/*   Created: 2025/11/14 17:17:37 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/14 18:07:47 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strrchr(const char *string, int searchedChar)
 {
-	size_t	i;
-	size_t	src_taille;
+	size_t		stlen;
+	size_t		i;
 
-	src_taille = 0;
-	while (src[src_taille])
-		src_taille++;
-	i = 0;
-	if (size == 0)
-		return (src_taille);
-	while (i < (size - 1) && src[i])
+	stlen = ft_strlen(string);
+	i = stlen - 1;
+	while (i > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		if (string[i] == searchedChar)
+			return (&string[i]);
+		i--;
 	}
-	dest[i] = '\0';
-	return (src_taille);
+	if (string[i] == searchedChar)
+		return (&string[i]);
+	if (searchedChar == '\0')
+		return (&string[stlen]);
+	return (NULL);
 }
