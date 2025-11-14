@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-void	*ft_memcpy(void * destination, const void * source, size_t size)
+void	*ft_memcpy(void *destination, const void *source, size_t size)
 {
-	size_t			i;
-	unsigned char	*d;
+	size_t				i;
+	unsigned char		*d;
 	const unsigned char	*s;
 
 	i = 0;

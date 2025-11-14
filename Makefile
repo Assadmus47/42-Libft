@@ -26,4 +26,9 @@ git:
 	git add .
 	git commit -m "auto commit"
 
+gitpush:
+	git add .
+	git commit -m "auto commit"
+	git push
+
 .PHONY : all cleam fclean re
