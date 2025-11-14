@@ -6,13 +6,13 @@
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:58:15 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/12 20:04:19 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/14 19:07:43 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*p;

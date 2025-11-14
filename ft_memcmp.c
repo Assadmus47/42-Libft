@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 18:10:52 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/14 19:07:00 by mkacemi          ###   ########.fr       */
+/*   Created: 2025/11/14 19:03:58 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/14 19:50:35 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *first, const char *second, size_t length)
+int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {
+	int		*p1;
+	int		*p2;
 	size_t	i;
 
 	i = 0;
-	if (length == 0)
-		return (0);
-	while ((first[i] || second[i]) && i < length)
+	p1 = (unsigned char) pointer1;
+	p2 = (unsigned char) pointer2;
+	while (i < size)
 	{
-		if (first[i] != second[i])
-			return ((unsigned char)first[i] - (unsigned char)second[i]);
-		i++;
+		if (p1[i] < p2[i])
+			return ((int)p1[i]);
+		else if (p1[i] > p2[i])
+			return ((int)p2[i]);
 	}
 	return (0);
 }
