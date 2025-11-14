@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:36:50 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/14 16:51:18 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:16:42 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ void	*ft_memcpy(void *destination, const void *source, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_toupper(int character);
+int		ft_tolower(int character);
+char	*ft_strchr(const char *string, int searchedChar);
+char	*ft_strrchr(const char *string, int searchedChar);
 
 #endif
