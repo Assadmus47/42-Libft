@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:36:50 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/14 18:37:48 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/14 18:42:30 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		ft_tolower(int character);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strrchr(const char *string, int searchedChar);
 int		ft_strncmp(const char *first, const char *second, size_t length);
+void	*memchr(const void *memoryBlock, int searchedChar, size_t size);
 
 #endif
