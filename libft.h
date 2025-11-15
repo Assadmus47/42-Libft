@@ -36,5 +36,6 @@ int		ft_strncmp(const char *first, const char *second, size_t length);
 void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size);
 int		ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_atoi(const char *theString );
 
 #endif
