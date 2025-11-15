@@ -36,8 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (s * sign);
 }
-
-int	main(void)
-{
-	printf("%d ",ft_atoi("--32"));
-}
