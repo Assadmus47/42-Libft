@@ -15,14 +15,14 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
-# define INT_MAX 2147483647
+# define FT_INT_MAX 2147483647
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *pointer, int value, size_t count );
 void	ft_bzero(void *s, size_t n);
 void	*ft_memmove(void *destination, const void *source, size_t size);
@@ -39,5 +39,6 @@ int		ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *theString );
 void	*ft_calloc(size_t elementCount, size_t elementSize);
+char	*ft_strdup(const char *source);
 
 #endif
