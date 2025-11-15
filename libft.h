@@ -15,6 +15,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# define INT_MAX 2147483647
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -37,5 +38,6 @@ void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size);
 int		ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *theString );
+void	*ft_calloc(size_t elementCount, size_t elementSize);
 
 #endif
