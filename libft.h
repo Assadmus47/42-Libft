@@ -40,5 +40,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *theString );
 void	*ft_calloc(size_t elementCount, size_t elementSize);
 char	*ft_strdup(const char *source);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
