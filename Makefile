@@ -31,4 +31,7 @@ gitpush:
 	git commit -m "auto commit"
 	git push
 
+norm:
+	norminette
+
 .PHONY : all cleam fclean re
