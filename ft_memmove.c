@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 23:36:56 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/17 17:44:25 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/17 17:52:43 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,29 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	i = size;
+	i = 0;
 	d = (unsigned char *)destination;
 	s = (unsigned char *)source;
-	while (i > 0)
+	if (destination > source)
 	{
-		i--;
-		d[i] = s[i];
+		i = size;
+		while (i > 0)
+		{
+			i--;
+			d[i] = s[i];
+		}
+	}
+	else
+	{
+		while (i < size)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (destination);
 }
+/*
 int main(void)
 {
 	char dest[] = "rem ipssum dolor sit a";
@@ -37,3 +50,4 @@ int main(void)
         write(1, "dest's adress was not returned\n", 31);
     write(1, dest, 22);
 }
+*/
