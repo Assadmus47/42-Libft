@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strtrim.c                                    :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 01:42:32 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/16 01:42:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/17 17:15:59 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_str(const char *str, char c)
+static int	in_str(const char *str, char c)
 {
 	int	i;
 
@@ -40,23 +40,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	j = 0;
+	while (in_str(set, s1[i]))
+		i++;
 	while (s1[i])
-	{
-		if (in_str(set, s1[i]))
-		{
-			i++;
-			continue ;
-		}
 		new_str[j++] = s1[i++];
+	i = strln - 1;
+	while (in_str(set, s1[i]))
+	{
+		new_str[j] = '\0';
+		i--;
+		j--;
 	}
 	new_str[j] = '\0';
 	return (new_str);
 }
-
-/*int	main(void)
+/*
+int	main(void)
 {
-	char *p = ft_strtrim("ajmal whda f had pp danya hiya dib batoul","pp");
+	char tab [] = "     llll    lorem ipsum dolor sit amet    ll l ll ";
+	char *p = ft_strtrim(tab,"l ");
 	int	i = 0;
 	while (p[i])
 		printf("%c",p[i++]);
-}*/
+}
+		*/

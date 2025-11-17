@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:44:45 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/16 15:44:45 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/17 16:16:49 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_char(const char *str, char c, int *p, int *j)
+static int	num_char(const char *str, char c, int *p, int *j)
 {
 	int	i;
 	int	occ;
@@ -30,14 +30,14 @@ int	num_char(const char *str, char c, int *p, int *j)
 	return (occ);
 }
 
-void	skip_charset(const char *str, int *i, char c, int *init)
+static void	skip_charset(const char *str, int *i, char c, int *init)
 {
 	while (str[*i] == c)
 		(*i)++;
 	*init = *i;
 }
 
-int	ft_strlength(const char *str, int index, char c)
+static int	ft_strlength(const char *str, int index, char c)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ int	ft_strlength(const char *str, int index, char c)
 	return (i - index);
 }
 
-void	copy(const char *str, char *str1, int init, char c)
+static void	copy(const char *str, char *str1, int init, char c)
 {
 	int	i;
 
