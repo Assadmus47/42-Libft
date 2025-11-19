@@ -10,99 +10,75 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-static int	num_char(const char *str, char c, int *p, int *j)
+static size_t	count_words(const char *str, char c)
 {
-	int	i;
-	int	occ;
+	size_t	i;
+	size_t	count;
 
-	occ = 0;
 	i = 0;
+	count = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
-		if (str[i] == c)
-			occ++;
+		if (str[i] != c && (i == 0 || str[i - 1] == c))
+			count++;
 		i++;
 	}
-	*p = 0;
-	*j = 0;
-	return (occ);
+	return (count);
 }
 
-static void	skip_charset(const char *str, int *i, char c, int *init)
-{
-	while (str[*i] == c)
-		(*i)++;
-	*init = *i;
-}
-
-static int	ft_strlength(const char *str, int index, char c)
-{
-	int	i;
-
-	i = index;
-	while (str[i] != c)
-		i++;
-	return (i - index);
-}
-
-static void	copy(const char *str, char *str1, int init, char c)
+static void	copy_word(const char *src, char *dst, int start, int end)
 {
 	int	i;
 
 	i = 0;
-	while (str[init] != c)
-	{
-		str1[i] = str[init];
-		i++;
-		init++;
-	}
-	str1[i] = '\0';
+	while (start < end)
+		dst[i++] = src[start++];
+	dst[i] = '\0';
+}
+
+static char	**free_all(char **tab, int j)
+{
+	while (j--)
+		free(tab[j]);
+	free(tab);
+	return (NULL);
+}
+
+static	void	initlize(int *i, int *j, int *start)
+{
+	*i = 0;
+	*j = 0;
+	*start = 0;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		init;
-	int		j;
-	char	**new_str;
+	char	**tab;
+	int		index[3];
 
-	new_str = malloc((sizeof(char *) * num_char(s, c, &i, &j)) + 1);
-	skip_charset(s, &i, c, &init);
-	while (s[i])
+	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	initlize(&index[0], &index[1], &index[2]);
+	while (s[index[0]])
 	{
-		if ((s[i] == c || s[i + 1] == '\0'))
+		if (s[index[0]] != c)
 		{
-			new_str[j] = malloc((sizeof(char) * ft_strlength(s, init, c)) + 1);
-			copy(s, new_str[j++], init, c);
-			skip_charset(s, &i, c, &init);
-			if (!s[i])
-				break ;
+			index[2] = index[0];
+			while (s[index[0]] && s[index[0]] != c)
+				index[0]++;
+			tab[index[1]] = malloc(sizeof(char) * (index[0] - index[2] + 1));
+			if (!tab[index[1]])
+				return (free_all(tab, index[1]));
+			copy_word(s, tab[index[1]++], index[2], index[0]);
 		}
-		i++;
+		else
+			index[0]++;
 	}
-	new_str[j] = NULL;
-	return (new_str);
+	tab[index[1]] = NULL;
+	return (tab);
 }
-
-/*
-int	main(void)
-{
-	char **c;
-	c =ft_split("abc gcb bb",' ');
-	int i = 0,j = 0;
-	printf("----------------main");
-	while(c[i])
-	{
-		printf("\n oo %d : \n",i);
-		j = 0;
-		while(c[i][j])
-		{
-			printf("%c",c[i][j++]);
-		}
-		printf("\n");
-		i++;
-	}
-}*/
