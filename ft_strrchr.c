@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:17:37 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/14 18:07:47 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/17 16:15:28 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strrchr(const char *string, int searchedChar)
 	i = stlen - 1;
 	while (i > 0)
 	{
-		if (string[i] == searchedChar)
-			return (&string[i]);
+		if (string[i] == (char)searchedChar)
+			return ((char *)&string[i]);
 		i--;
 	}
 	if (string[i] == searchedChar)
-		return (&string[i]);
+		return ((char *)&string[i]);
 	if (searchedChar == '\0')
-		return (&string[stlen]);
+		return ((char *)&string[stlen]);
 	return (NULL);
 }
