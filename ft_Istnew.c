@@ -1,38 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_Istnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 00:52:10 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/20 17:39:44 by mkacemi          ###   ########.fr       */
+/*   Created: 2025/11/20 20:01:11 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/20 20:01:14 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	s;
-
-	s = 0;
-	sign = 1;
-	i = 0;
-	while ((str[i] >= 7 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		s = (10 * s) + (str[i] - '0');
-		i++;
-	}
-	return (s * sign);
-}
