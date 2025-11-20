@@ -34,7 +34,7 @@ gitauto:
 	git commit -m "auto commit"
 	git push
 
-gitpush:
+git:
 	git add .
 	git commit -m "$(msg)"
 
