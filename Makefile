@@ -29,12 +29,12 @@ fclean: clean
 
 re: fclean all
 
-gitpush:
+gitauto:
 	git add .
 	git commit -m "auto commit"
 	git push
 
-git:
+gitpush:
 	git add .
 	git commit -m "$(msg)"
 
