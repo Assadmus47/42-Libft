@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 00:30:53 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/15 00:30:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/21 19:13:39 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!haystack)
+		return (NULL);
 	if (!needle[0])
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
@@ -26,7 +28,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		if (haystack[i] == needle[0])
 		{
 			j = 0;
-			while ((needle[j] == haystack[i + j]) && (i + j < len))
+			while ((needle[j] == haystack[i + j]) && (i + j) < len)
 				j++;
 			if (!needle[j])
 				return ((char *)&haystack[i]);
@@ -35,3 +37,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+/*
+int	main()
+{
+	printf("%s",ft_strnstr("hello world", "lo", 11));
+}*/

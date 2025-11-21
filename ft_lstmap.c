@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 23:56:10 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/21 19:36:29 by mkacemi          ###   ########.fr       */
+/*   Created: 2025/11/21 19:30:36 by mkacemi           #+#    #+#             */
+/*   Updated: 2025/11/21 19:33:03 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *pointer, int value, size_t count )
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	*p;
+	t_list	*first;
+	t_list	*new;
 
-	i = 0;
-	p = (unsigned char *)pointer;
-	while (i < count)
+	if (!f || !del)
+		return (NULL);
+	first = NULL;
+	while (lst)
 	{
-		p[i++] = value;
+		if (!(new = ft_lstnew((*f)(lst->content))))
+		{
+			while (first)
+			{
+				new = first->next;
+				(*del)(first->content);
+				free(first);
+				first = new;
+			}
+			lst = NULL;
+			return (NULL);
+		}
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
 	}
-	return (pointer);
+	return (first);
 }
