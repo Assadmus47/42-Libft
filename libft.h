@@ -15,9 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
-# define FT_INT_MAX 2147483647
 
 typedef struct s_list
 {
