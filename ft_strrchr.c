@@ -10,24 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-char	*ft_strrchr(const char *string, int searchedChar)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t		stlen;
-	size_t		i;
+	int	i;
 
-	stlen = ft_strlen(string);
-	i = stlen - 1;
-	while (i > 0)
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	while (i >= 0)
 	{
-		if (string[i] == (char)searchedChar)
-			return ((char *)&string[i]);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i--;
 	}
-	if (string[i] == searchedChar)
-		return ((char *)&string[i]);
-	if (searchedChar == '\0')
-		return ((char *)&string[stlen]);
 	return (NULL);
 }
