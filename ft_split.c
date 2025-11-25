@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:44:45 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/17 16:16:49 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/25 18:55:11 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static size_t	count_words(const char *str, char c)
 	return (count);
 }
 
-static void	copy_word(const char *src, char *dst, int start, int end)
+static void	copy_word(const char *src, char *dst, size_t start, size_t end)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (start < end)
@@ -40,7 +40,7 @@ static void	copy_word(const char *src, char *dst, int start, int end)
 	dst[i] = '\0';
 }
 
-static char	**free_all(char **tab, int j)
+static char	**free_all(char **tab, size_t j)
 {
 	while (j--)
 		free(tab[j]);
@@ -48,7 +48,7 @@ static char	**free_all(char **tab, int j)
 	return (NULL);
 }
 
-static	void	initlize(int *i, int *j, int *start)
+static	void	initlize(size_t *i, size_t *j, size_t *start)
 {
 	*i = 0;
 	*j = 0;
@@ -57,8 +57,8 @@ static	void	initlize(int *i, int *j, int *start)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
-	int		index[3];
+	char		**tab;
+	size_t		index[3];
 
 	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!tab)
