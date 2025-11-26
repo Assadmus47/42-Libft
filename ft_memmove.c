@@ -19,6 +19,10 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!destination && !source)
+		return (NULL);
+	if (size == 0 || destination == source)
+		return (destination);
 	i = 0;
 	d = (unsigned char *)destination;
 	s = (unsigned char *)source;
