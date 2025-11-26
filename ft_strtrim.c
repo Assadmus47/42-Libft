@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 01:42:32 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/17 17:15:59 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/26 18:36:51 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	in_str(const char *str, char c)
+static int	is_in_set(const char *str, char c)
 {
 	int	i;
 
@@ -29,29 +29,25 @@ static int	in_str(const char *str, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*new_str;
+	size_t	start;
+	size_t	end;
 	size_t	i;
-	size_t	j;
-	size_t	strln;
 
-	new_str = NULL;
-	strln = ft_strlen(s1);
-	new_str = malloc((sizeof(char) * strln) + 1);
-	if (new_str == NULL)
+	if (!s1 || !set)
+		return ("NULL");
+	start = 0;
+	while (s1[start] && is_in_set(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && is_in_set(set, s1[end - 1]))
+		end --;
+	new_str = malloc((sizeof(char) * (end - start + 1)));
+	if (!new_str)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (in_str(set, s1[i]))
-		i++;
-	while (s1[i])
-		new_str[j++] = s1[i++];
-	i = strln - 1;
-	while (in_str(set, s1[i]))
-	{
-		new_str[j] = '\0';
-		i--;
-		j--;
-	}
-	new_str[j] = '\0';
+	while (start < end)
+		new_str[i++] = s1[start++];
+	new_str[i] = '\0';
 	return (new_str);
 }
 /*
@@ -63,4 +59,9 @@ int	main(void)
 	while (p[i])
 		printf("%c",p[i++]);
 }
+			strln = ft_strlen(s1);
+	new_str = malloc((sizeof(char) * strln) + 1);
+	if (new_str == NULL)
+		return (NULL);
+	i = 0;
 		*/
