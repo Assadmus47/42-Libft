@@ -17,6 +17,10 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	size_t			i;
 
+	if (!destination && !source)
+		return (NULL);
+	if (size == 0 || destination == source)
+		return (destination);
 	i = 0;
 	if (!dest && !src)
 		return (NULL);
