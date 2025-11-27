@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:01:10 by mkacemi           #+#    #+#             */
-/*   Updated: 2025/11/21 18:19:16 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/27 17:44:26 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-	{
-		return (NULL);
-	}
 	while (*s)
 	{
 		if (*s == (char)c)
