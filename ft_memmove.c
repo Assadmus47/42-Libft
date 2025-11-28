@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 23:36:56 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/27 17:42:46 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/28 16:14:10 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	size_t			i;
 
-	if (!destination && !source)
-		return (NULL);
-	if (size == 0 || destination == source)
-		return (destination);
 	i = 0;
 	if (!dest && !src)
 		return (NULL);
