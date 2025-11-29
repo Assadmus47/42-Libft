@@ -6,14 +6,13 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:36:50 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/25 18:53:28 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:20:23 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
@@ -38,14 +37,14 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_toupper(int character);
 int		ft_tolower(int character);
-char	*ft_strchr(const char *string, int searchedChar);
-char	*ft_strrchr(const char *string, int searchedChar);
+char	*ft_strchr(const char *string, int c);
+char	*ft_strrchr(const char *string, int c);
 int		ft_strncmp(const char *first, const char *second, size_t length);
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size);
+void	*ft_memchr(const void *memory_block, int searched_char, size_t size);
 int		ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *theString );
-void	*ft_calloc(size_t elementCount, size_t elementSize);
+void	*ft_calloc(size_t element_count, size_t element_size);
 char	*ft_strdup(const char *source);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

@@ -6,20 +6,20 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 01:46:28 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/27 17:47:29 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 16:58:42 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t elementCount, size_t elementSize)
+void	*ft_calloc(size_t element_count, size_t element_size)
 {
 	unsigned char	*p;
 	size_t			i;
 	size_t			total_size;
 
-	total_size = elementCount * elementSize;
-	if (elementCount != 0 && elementSize > (size_t)-1 / elementCount)
+	total_size = element_count * element_size;
+	if (element_count != 0 && element_size > (size_t)-1 / element_count)
 		return (NULL);
 	i = 0;
 	p = NULL;

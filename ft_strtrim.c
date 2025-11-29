@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 01:42:32 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/26 18:36:51 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:08:34 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	if (!s1 || !set)
-		return ("NULL");
+		return (NULL);
 	start = 0;
 	while (s1[start] && is_in_set(set, s1[start]))
 		start++;

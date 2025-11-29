@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 02:26:46 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/25 19:11:07 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:27:39 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
-	if (!s)
+	if (!s || fd < 0)
 		return ;
 	while (s[i])
 	{

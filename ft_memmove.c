@@ -6,12 +6,11 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 23:36:56 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/28 16:14:10 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:34:34 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {

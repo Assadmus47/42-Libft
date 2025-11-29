@@ -27,7 +27,6 @@ $(NAME): $(OBJ)
 
 bonus: $(OBJ) $(OBJ_BONUS)
 	ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
-	touch .bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I. -c $< -o $@

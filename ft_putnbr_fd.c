@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkacemi <mkacemi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 02:35:13 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/20 17:36:00 by mkacemi          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:34:01 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (nb == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
